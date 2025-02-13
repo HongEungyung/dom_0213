@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 링크연결 바꾸기</title>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버</a>
+    <script>
+        const aEl = document.querySelector("a")
+        const href = aEl.getAttribute("href")
+        console.log(aEl);
+        // html 링크 주소 변경
+        aEl.setAttribute("href" , "http://www.google.com")
+        // html 글자 변경
+        aEl.innerHTML = "구글"
+        // 타겟 self(디폴트) 에서 blank 로 변경
+        aEl.setAttribute("target" , "_blank")
+        // class명 추가
+        aEl.setAttribute("class" , "link")
+    </script>
+</body>
+</html>
