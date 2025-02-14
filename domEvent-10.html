@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Event 객체</title>
+</head>
+<body>
+    <div class="container">
+        <img src="images/coffeeBlue.png" alt="cup" id="cup">
+        <p class="display">
+            <!-- js 출력 -->
+        </p>
+    </div>
+    <script>
+        const cup = document.querySelector("#cup")
+        cup.addEventListener("click" , function(){
+            const display = document.querySelector(".display")
+            display.innerHTML = `
+            이벤트 유형 : ${event.type}<br>
+            이벤트 발생 위치(X) : ${event.pageX}<br>
+            // 사진 안에서 클릭 한 위치 값<br>
+            이벤트 발생 위치(Y) : ${event.pageY}<br>
+            이미지 아이디 : ${event.target.id}<br>
+            이미지 주소 : ${event.target.src}
+            `
+            console.log(event.target);
+            
+        })
+    </script>
+</body>
+</html>
